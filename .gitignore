@@ -8,6 +8,7 @@
 *.pdb
 *.Resharper*
 *.suo
+*.user
 
 # Packages #
 ############

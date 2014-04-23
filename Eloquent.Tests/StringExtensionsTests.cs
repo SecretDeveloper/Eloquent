@@ -37,6 +37,14 @@ namespace Eloquent.Tests
 
                 Assert.AreEqual(dt.ToString(), dt2.ToString());
             }
+
+            [TestMethod]
+            public void Can_Convert_String()
+            {
+                DateTime dt = new DateTime(2014, 04, 23, 10, 56, 10, 30);
+                
+                Assert.AreEqual(dt.ToString(), "23-Apr-2014 10:56:10.30".ToDateTime().ToString());
+            }
         }
 
         [TestClass]
