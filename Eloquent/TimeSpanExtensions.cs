@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eloquent
 {
@@ -21,17 +17,8 @@ namespace Eloquent
      * 
      * 
      */
-
-    public static class Extensions
+    public static class TimeSpanExtensions
     {
-        public static void Times(this int times, Action action)
-        {
-            for (int i = 0; i < times; i++)
-            {
-                action();
-            }
-        }
-
         public static TimeSpan Milliseconds(this int value)
         {
             return new TimeSpan(0, 0, 0, 0, value);
@@ -56,7 +43,7 @@ namespace Eloquent
         {
             return new TimeSpan(value, 0, 0, 0);
         }
-
+    
         public static DateTime Ago(this TimeSpan value)
         {
             return DateTime.Now.Subtract(value);
