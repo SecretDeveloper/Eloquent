@@ -4,7 +4,7 @@ Eloquent
 Eloquent is a collection of fluent ruby like expressions for C#.  
 
 Sample Expressions:
-```
+```c#
  var recentPast = 10.Minutes().Ago();
  var distantFuture = 10.Years().FromNow();
  var dateWritten = "23-Apr-2014 10:56:10.30".ToDateTime();
