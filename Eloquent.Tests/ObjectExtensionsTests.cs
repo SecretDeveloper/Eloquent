@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Eloquent.Tests.Strings
+namespace Eloquent.Tests.Objects
 {
-    public class StringExtensionsTests
+    public class ObjectExtensionsTests
     {
         [TestClass]
         public class ToBoolean
@@ -11,8 +11,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.IsTrue("true".ToBoolean());
-                Assert.IsFalse("false".ToBoolean());
+                Assert.IsTrue(("true" as object).ToBoolean());
+                Assert.IsFalse(("false" as object).ToBoolean());
             }
         }
 
@@ -22,7 +22,7 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToByte());
+                Assert.AreEqual(1, ("1" as object).ToByte());
             }
         }
 
@@ -33,7 +33,7 @@ namespace Eloquent.Tests.Strings
             public void Can_Convert()
             {
                 DateTime dt = DateTime.Now;
-                DateTime dt2 = dt.ToString().ToDateTime();
+                DateTime dt2 = (dt as object).ToDateTime();
 
                 Assert.AreEqual(dt.ToString(), dt2.ToString());
             }
@@ -42,8 +42,8 @@ namespace Eloquent.Tests.Strings
             public void Can_Convert_String()
             {
                 DateTime dt = new DateTime(2014, 04, 23, 10, 56, 10, 30);
-                
-                Assert.AreEqual(dt.ToString(), "23-Apr-2014 10:56:10.30".ToDateTime().ToString());
+
+                Assert.AreEqual(dt.ToString(), ("23-Apr-2014 10:56:10.30" as object).ToDateTime().ToString());
             }
         }
 
@@ -53,8 +53,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1M, "1".ToDecimal());
-                Assert.AreEqual(-1.12333M, "-1.12333".ToDecimal());
+                Assert.AreEqual(1M, ("1" as object).ToDecimal());
+                Assert.AreEqual(-1.12333M, ("-1.12333" as object).ToDecimal());
             }
         }
 
@@ -64,8 +64,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1D, "1".ToDouble());
-                Assert.AreEqual(-1.12333D, "-1.12333".ToDouble());
+                Assert.AreEqual(1D, ("1" as object).ToDouble());
+                Assert.AreEqual(-1.12333D, ("-1.12333" as object).ToDouble());
             }
         }
 
@@ -75,8 +75,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToInt16());
-                Assert.AreEqual(-1, "-1".ToInt16());
+                Assert.AreEqual(1, ("1" as object).ToInt16());
+                Assert.AreEqual(-1, ("-1" as object).ToInt16());
             }
         }
 
@@ -86,8 +86,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToInt32());
-                Assert.AreEqual(-1, "-1".ToInt32());
+                Assert.AreEqual(1, ("1" as object).ToInt32());
+                Assert.AreEqual(-1, ("-1" as object).ToInt32());
             }
         }
 
@@ -97,8 +97,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToInt64());
-                Assert.AreEqual(-1, "-1".ToInt64());
+                Assert.AreEqual(1, ("1" as object).ToInt64());
+                Assert.AreEqual(-1, ("-1" as object).ToInt64());
             }
         }
 
@@ -108,8 +108,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToSByte());
-                Assert.AreEqual(-1, "-1".ToSByte());
+                Assert.AreEqual(1, ("1" as object).ToSByte());
+                Assert.AreEqual(-1, ("-1" as object).ToSByte());
             }
         }
 
@@ -119,8 +119,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToSingle());
-                Assert.AreEqual(-1, "-1".ToSingle());
+                Assert.AreEqual(1, ("1" as object).ToSingle());
+                Assert.AreEqual(-1, ("-1" as object).ToSingle());
             }
         }
 
@@ -130,8 +130,8 @@ namespace Eloquent.Tests.Strings
             [TestMethod]
             public void Can_Convert()
             {
-                Assert.AreEqual(1, "1".ToUInt16());
-                Assert.AreEqual(UInt16.MaxValue, UInt16.MaxValue.ToString().ToUInt16());
+                Assert.AreEqual(1, ("1" as object).ToUInt16());
+                Assert.AreEqual(UInt16.MaxValue, (UInt16.MaxValue as object).ToUInt16());
             }
         }
 
@@ -142,7 +142,7 @@ namespace Eloquent.Tests.Strings
             public void Can_Convert()
             {
                 Assert.AreEqual(Convert.ToUInt32(1), "1".ToUInt32());
-                Assert.AreEqual(UInt32.MaxValue, UInt32.MaxValue.ToString().ToUInt32());
+                Assert.AreEqual(UInt32.MaxValue, (UInt32.MaxValue as object).ToUInt32());
             }
         }
 
@@ -153,18 +153,7 @@ namespace Eloquent.Tests.Strings
             public void Can_Convert()
             {
                 Assert.AreEqual(Convert.ToUInt64(1), "1".ToUInt64());
-                Assert.AreEqual(UInt64.MaxValue, UInt64.MaxValue.ToString().ToUInt64());
-            }
-        }
-
-        [TestClass]
-        public class ParseDateTime
-        {
-            [TestMethod]
-            public void Can_Convert()
-            {
-                DateTime dt = DateTime.Now;
-                Assert.AreEqual(dt.ToString(), dt.ToString().ParseDateTime().ToString());
+                Assert.AreEqual(UInt64.MaxValue, (UInt64.MaxValue as object).ToUInt64());
             }
         }
     }

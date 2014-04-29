@@ -2,8 +2,9 @@
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Eloquent;
 
-namespace Eloquent.Tests
+namespace Eloquent.Tests.Int
 {
     public class IntExtensionsTests
     {

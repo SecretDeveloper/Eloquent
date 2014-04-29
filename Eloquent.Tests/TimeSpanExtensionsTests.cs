@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Eloquent.Tests
+namespace Eloquent.Tests.TimeSpan
 {
     public class TimeSpanExtensionsTests
     {
