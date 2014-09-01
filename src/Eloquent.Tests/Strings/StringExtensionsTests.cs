@@ -1,8 +1,10 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Eloquent.Tests.Strings
 {
+    [ExcludeFromCodeCoverage]
     public class StringExtensionsTests
     {
         [TestClass]

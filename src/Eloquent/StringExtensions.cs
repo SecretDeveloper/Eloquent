@@ -1,5 +1,8 @@
 ﻿using System;
+using System.CodeDom;
+using System.CodeDom.Compiler;
 using System.Globalization;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace Eloquent
@@ -179,6 +182,30 @@ namespace Eloquent
         {
             var regex = new Regex(pattern);
             return regex.Replace(value, replacement);
+        }
+
+        /// <summary>
+        /// Returns an escaped string where whitespace characters are replaced with their non-whitespace symbol.
+        ///     HorizontalTab:  \t
+        ///     VerticalTab:    \v
+        ///     NewLine:        \n
+        ///     CarriageReturn: \r
+        ///     FormFeed:       \f
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ToLiteral(this string value)
+        {
+            using (var writer = new StringWriter())
+            {
+                using (var provider = CodeDomProvider.CreateProvider("CSharp"))
+                {
+                    var opts = new CodeGeneratorOptions();
+                    opts.VerbatimOrder = true;
+                    provider.GenerateCodeFromExpression(new CodePrimitiveExpression(value), writer, opts);
+                    return writer.ToString();
+                }
+            }
         }
 
         #endregion
