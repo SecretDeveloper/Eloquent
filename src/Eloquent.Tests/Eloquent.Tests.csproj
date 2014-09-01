@@ -29,7 +29,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\TestOutput\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -50,11 +50,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ObjectExtensionsTests.cs" />
-    <Compile Include="IntExtensionsTests.cs" />
+    <Compile Include="Int\IntExtensionsTests.cs" />
+    <Compile Include="Objects\ObjectExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringExtensionsTests.cs" />
-    <Compile Include="TimeSpanExtensionsTests.cs" />
+    <Compile Include="Strings\StringExtensionsTests.cs" />
+    <Compile Include="TimeSpan\TimeSpanExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Eloquent\Eloquent.csproj">

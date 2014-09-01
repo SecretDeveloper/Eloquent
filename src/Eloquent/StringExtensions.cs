@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Eloquent
 {
@@ -96,7 +97,7 @@ namespace Eloquent
         {
             return DateTime.TryParse(value, out result);
         }
-
+        
         public static bool TryParseDateTime(this string value, out DateTime result, IFormatProvider provider, DateTimeStyles styles)
         {
             return DateTime.TryParse(value, provider, styles, out result);
@@ -133,6 +134,54 @@ namespace Eloquent
         }
 
         #endregion
-        
+
+        #region Queries
+
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        public static bool IsNullOrWhiteSpace(this string value)
+        {
+            return string.IsNullOrWhiteSpace(value);
+        }
+
+        #endregion
+
+        #region Functions
+
+        public static string Format(this string value, params object[] args)
+        {
+            return string.Format(value, args);
+        }
+
+        /// <summary>
+        /// Calls string.Join and uses the current string as the separator value.
+        /// </summary>
+        /// <remarks>
+        /// var csv = ','.Join(array);
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static string Join(this string value, params object[] args)
+        {
+            return string.Join(value, args);
+        }
+
+        public static MatchCollection RegexMatches(this string value, string pattern)
+        {
+            return Regex.Matches(value, pattern);
+        }
+
+        public static string RegexReplace(this string value, string pattern, string replacement)
+        {
+            var regex = new Regex(pattern);
+            return regex.Replace(value, replacement);
+        }
+
+        #endregion
+
     }
 }

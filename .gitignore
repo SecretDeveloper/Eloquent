@@ -42,5 +42,8 @@ Thumbs.db
 bin/
 obj/
 TestResults/
+TestOutput/
+BuildOutput/
 packages/
 _Resharper*/
+.nuget

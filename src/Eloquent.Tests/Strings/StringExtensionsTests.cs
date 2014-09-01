@@ -1,10 +1,34 @@
-﻿using System;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Eloquent.Tests.Strings
 {
     public class StringExtensionsTests
     {
+        [TestClass]
+        public class IsNullOrEmpty
+        {
+            [TestMethod]
+            public void Can_Determine()
+            {
+                Assert.IsTrue("".IsNullOrEmpty());
+                Assert.IsFalse("blah".IsNullOrEmpty());
+            }
+        }
+
+        [TestClass]
+        public class IsNullOrWhiteSpace
+        {
+            [TestMethod]
+            public void Can_Determine()
+            {
+                Assert.IsTrue("".IsNullOrWhiteSpace());
+                Assert.IsTrue(" ".IsNullOrWhiteSpace());
+                Assert.IsFalse("blah".IsNullOrWhiteSpace());
+            }
+        }
+
+
         [TestClass]
         public class ToBoolean
         {
