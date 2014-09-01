@@ -1,6 +1,6 @@
 # Eloquent
 
-## Eloquent is a small collection of fluent (or fluent-like) expressions for C#.  
+Eloquent is a small collection of fluent (or fluent-like) expressions for C#.  The examples below are some but not all of the methods it provides.
 
 ### TimeSpan expressions
 ```c#
