@@ -140,6 +140,11 @@ namespace Eloquent
 
         #region Queries
 
+        public static bool IsEmpty(this string value)
+        {
+            return string.Empty.Equals(value);
+        }
+
         public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);

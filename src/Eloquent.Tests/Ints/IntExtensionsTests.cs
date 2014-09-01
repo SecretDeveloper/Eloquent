@@ -3,10 +3,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Eloquent.Tests.Int
+namespace Eloquent.Tests.Ints
 {
     [ExcludeFromCodeCoverage]
-    public class IntExtensionsTests
+    public static class IntExtensionsTests
     {
         [TestClass]
         public class Times
