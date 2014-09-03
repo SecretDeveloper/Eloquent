@@ -7,10 +7,9 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("Eloquent.Tests")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("@SecretDeveloper")]
 [assembly: AssemblyProduct("Eloquent.Tests")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCopyright("Copyright © Gary Kenneally (@SecretDeveloper)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

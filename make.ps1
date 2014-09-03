@@ -113,7 +113,7 @@ function deploy{
 function pack{
     # Packing
     write-host "Packing" -foregroundcolor:blue
-    nuget pack .\nuget\Eloquent.nuspec -OutputDirectory .\nuget > $logPath\LogPacking.log
+    nuget pack .\src\Eloquent\Eloquent.csproj -OutputDirectory .\releases > $logPath\LogPacking.log     
     if($? -eq $False){
         Write-host "PACK FAILED!"  -foregroundcolor:red
         exit
