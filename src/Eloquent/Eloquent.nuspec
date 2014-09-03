@@ -10,6 +10,7 @@
     <owners>$author$</owners>    
     <licenseUrl>https://raw.githubusercontent.com/SecretDeveloper/Eloquent/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/SecretDeveloper/Eloquent</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/SecretDeveloper/Eloquent/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>    
     <tags>Fluent Fluent-Like .NET C#</tags>    
   </metadata>
