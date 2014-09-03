@@ -96,12 +96,28 @@ function document{
     # DOCUMENTING
     Write-Host "Documenting" -foregroundcolor:blue
     Invoke-expression "tdg -i '.\src\templates\README.template.md' -o './README.md'"
+    Invoke-expression "tdg -i '.\src\templates\README.template.txt' -o './README.txt'"
+    cp .\README.txt .\src\buildoutput\
 }
 
 function deploy{
     # DEPLOYING
     write-host "Deploying" -foregroundcolor:blue
     zip a -tzip .\src\buildoutput\last.zip .\src\BuildOutput\*.* > $logPath\LogDeploy.log
+    if($? -eq $False){
+        Write-host "DEPLOY FAILED!"  -foregroundcolor:red
+        exit
+    }
+}
+
+function pack{
+    # Packing
+    write-host "Packing" -foregroundcolor:blue
+    nuget pack .\nuget\Eloquent.nuspec -OutputDirectory .\nuget > $logPath\LogPacking.log
+    if($? -eq $False){
+        Write-host "PACK FAILED!"  -foregroundcolor:red
+        exit
+    }
 }
 
 $basePath = Get-Location
@@ -111,8 +127,9 @@ if($buildType -eq "Release"){
     clean
     build
     test
-    document
+    document    
     deploy
+    pack
 }
 else{
     clean
