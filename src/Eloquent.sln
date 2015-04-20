@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eloquent", "Eloquent.csproj", "{86EBF14F-F278-4B11-9C7F-64C7522FE6C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eloquent.Tests", "..\Eloquent.Tests\Eloquent.Tests.csproj", "{79BC5C78-AEB8-4189-B2A4-6157D92B1009}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9143B7FA-FBA8-4CF5-8714-325B4F5ECC6A}"
 	ProjectSection(SolutionItems) = preProject
 		LocalTestRun.testsettings = LocalTestRun.testsettings
@@ -14,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EF1FB5
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eloquent", "Eloquent\Eloquent.csproj", "{86EBF14F-F278-4B11-9C7F-64C7522FE6C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eloquent.Tests", "Eloquent.Tests\Eloquent.Tests.csproj", "{79BC5C78-AEB8-4189-B2A4-6157D92B1009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
