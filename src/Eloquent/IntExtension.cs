@@ -46,9 +46,11 @@ namespace Eloquent
             return number * EXABYTE;
         }
 
-        public static void Times(this int times, Action action)
+        public static void Times(this int value, Action action)
         {
-            for (int i = 0; i < times; i++)
+            if (action == null) return;
+
+            for (int i = 0; i < value; i++)
             {
                 action();
             }

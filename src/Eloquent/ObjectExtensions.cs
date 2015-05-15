@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,67 +13,67 @@ namespace Eloquent
 
         public static Boolean ToBoolean(this object value)
         {
-            return Convert.ToBoolean(value);
+            return Convert.ToBoolean(value, CultureInfo.InvariantCulture);
         }
 
         public static Byte ToByte(this object value)
         {
-            return Convert.ToByte(value);
+            return Convert.ToByte(value, CultureInfo.InvariantCulture);
         }
 
         public static DateTime ToDateTime(this object value)
         {
-            return Convert.ToDateTime(value);
+            return Convert.ToDateTime(value, CultureInfo.InvariantCulture);
         }
 
         public static Decimal ToDecimal(this object value)
         {
-            return Convert.ToDecimal(value);
+            return Convert.ToDecimal(value, CultureInfo.InvariantCulture);
         }
 
         public static Double ToDouble(this object value)
         {
-            return Convert.ToDouble(value);
+            return Convert.ToDouble(value, CultureInfo.InvariantCulture);
         }
 
         public static Int32 ToInt16(this object value)
         {
-            return Convert.ToInt16(value);
+            return Convert.ToInt16(value, CultureInfo.InvariantCulture);
         }
 
         public static Int32 ToInt32(this object value)
         {
-            return Convert.ToInt32(value);
+            return Convert.ToInt32(value, CultureInfo.InvariantCulture);
         }
 
         public static Int64 ToInt64(this object value)
         {
-            return Convert.ToInt64(value);
+            return Convert.ToInt64(value, CultureInfo.InvariantCulture);
         }
 
         public static SByte ToSByte(this object value)
         {
-            return Convert.ToSByte(value);
+            return Convert.ToSByte(value, CultureInfo.InvariantCulture);
         }
 
         public static Single ToSingle(this object value)
         {
-            return Convert.ToSingle(value);
+            return Convert.ToSingle(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt16 ToUInt16(this object value)
         {
-            return Convert.ToUInt16(value);
+            return Convert.ToUInt16(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt32 ToUInt32(this object value)
         {
-            return Convert.ToUInt32(value);
+            return Convert.ToUInt32(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt64 ToUInt64(this object value)
         {
-            return Convert.ToUInt64(value);
+            return Convert.ToUInt64(value, CultureInfo.InvariantCulture);
         }
 
         #endregion

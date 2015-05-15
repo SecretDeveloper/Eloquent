@@ -32,7 +32,7 @@ function build{
     # BUILD
     write-host "Building"  -foregroundcolor:blue
     $msbuild = "c:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
-    $solutionPath = "$basePath\src\Eloquent\Eloquent.sln"
+    $solutionPath = "$basePath\src\Eloquent.sln"
     Invoke-expression "$msbuild $solutionPath /p:configuration=$buildType /t:Clean /t:Build /nologo > $logPath\LogBuild.log"
     $content = (Get-Content -Path "$logPath\LogBuild.log")
     $failedContent = ($content -match "Build FAILED.")

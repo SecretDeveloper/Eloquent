@@ -14,67 +14,67 @@ namespace Eloquent
 
         public static Boolean ToBoolean(this string value)
         {
-            return Convert.ToBoolean(value);
+            return Convert.ToBoolean(value, CultureInfo.InvariantCulture);
         }
 
         public static Byte ToByte(this string value)
         {
-            return Convert.ToByte(value);
+            return Convert.ToByte(value, CultureInfo.InvariantCulture);
         }
 
         public static DateTime ToDateTime(this string value)
         {
-            return Convert.ToDateTime(value);
+            return Convert.ToDateTime(value, CultureInfo.InvariantCulture);
         }
 
         public static Decimal ToDecimal(this string value)
         {
-            return Convert.ToDecimal(value);
+            return Convert.ToDecimal(value, CultureInfo.InvariantCulture);
         }
 
         public static Double ToDouble(this string value)
         {
-            return Convert.ToDouble(value);
+            return Convert.ToDouble(value, CultureInfo.InvariantCulture);
         }
         
         public static Int32 ToInt16(this string value)
         {
-            return Convert.ToInt16(value);
+            return Convert.ToInt16(value, CultureInfo.InvariantCulture);
         }
 
         public static Int32 ToInt32(this string value)
         {
-            return Convert.ToInt32(value);
+            return Convert.ToInt32(value, CultureInfo.InvariantCulture);
         }
 
         public static Int64 ToInt64(this string value)
         {
-            return Convert.ToInt64(value);
+            return Convert.ToInt64(value, CultureInfo.InvariantCulture);
         }
 
         public static SByte ToSByte(this string value)
         {
-            return Convert.ToSByte(value);
+            return Convert.ToSByte(value, CultureInfo.InvariantCulture);
         }
 
         public static Single ToSingle(this string value)
         {
-            return Convert.ToSingle(value);
+            return Convert.ToSingle(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt16 ToUInt16(this string value)
         {
-            return Convert.ToUInt16(value);
+            return Convert.ToUInt16(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt32 ToUInt32(this string value)
         {
-            return Convert.ToUInt32(value);
+            return Convert.ToUInt32(value, CultureInfo.InvariantCulture);
         }
 
         public static UInt64 ToUInt64(this string value)
         {
-            return Convert.ToUInt64(value);
+            return Convert.ToUInt64(value, CultureInfo.InvariantCulture);
         }
 
         #endregion
@@ -83,7 +83,7 @@ namespace Eloquent
 
         public static DateTime ParseDateTime(this string value)
         {
-            return DateTime.Parse(value);
+            return DateTime.Parse(value, CultureInfo.InvariantCulture);
         }
 
         public static DateTime ParseDateTime(this string value, IFormatProvider provider)
@@ -98,9 +98,14 @@ namespace Eloquent
 
         public static bool TryParseDateTime(this string value, out DateTime result)
         {
-            return DateTime.TryParse(value, out result);
+            return DateTime.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal, out result);
         }
-        
+
+        public static bool TryParseDateTime(this string value, out DateTime result, IFormatProvider provider)
+        {
+            return DateTime.TryParse(value, provider, DateTimeStyles.AssumeLocal, out result);
+        }
+
         public static bool TryParseDateTime(this string value, out DateTime result, IFormatProvider provider, DateTimeStyles styles)
         {
             return DateTime.TryParse(value, provider, styles, out result);
@@ -108,43 +113,38 @@ namespace Eloquent
 
         public static Int16 ParseInt16(this string value)
         {
-            return Int16.Parse(value);
+            return Int16.Parse(value, CultureInfo.InvariantCulture);
         }
 
         public static bool TryParseInt16(this string value, out Int16 result)
         {
-            return Int16.TryParse(value, out result);
+            return Int16.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
 
         public static Int32 ParseInt32(this string value)
         {
-            return Int32.Parse(value);
+            return Int32.Parse(value, NumberStyles.Any, CultureInfo.InvariantCulture);
         }
 
         public static bool TryParseInt32(this string value, out Int32 result)
         {
-            return Int32.TryParse(value, out result);
+            return Int32.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
 
         public static Int64 ParseInt64(this string value)
         {
-            return Int64.Parse(value);
+            return Int64.Parse(value, NumberStyles.Any, CultureInfo.InvariantCulture);
         }
 
         public static bool TryParseInt64(this string value, out Int64 result)
         {
-            return Int64.TryParse(value, out result);
+            return Int64.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result);
         }
 
         #endregion
 
         #region Queries
-
-        public static bool IsEmpty(this string value)
-        {
-            return string.Empty.Equals(value);
-        }
-
+        
         public static bool IsNullOrEmpty(this string value)
         {
             return string.IsNullOrEmpty(value);
@@ -161,7 +161,7 @@ namespace Eloquent
 
         public static string Format(this string value, params object[] args)
         {
-            return string.Format(value, args);
+            return string.Format(CultureInfo.InvariantCulture, value, args);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Eloquent
         /// <returns></returns>
         public static string Join(this string value, params object[] args)
         {
-            return string.Join(value, args);
+            return string.Join(value, args, CultureInfo.InvariantCulture);
         }
 
         public static MatchCollection RegexMatches(this string value, string pattern)
@@ -201,7 +201,7 @@ namespace Eloquent
         /// <returns></returns>
         public static string ToLiteral(this string value)
         {
-            using (var writer = new StringWriter())
+            using (var writer = new StringWriter(CultureInfo.InvariantCulture))
             {
                 using (var provider = CodeDomProvider.CreateProvider("CSharp"))
                 {

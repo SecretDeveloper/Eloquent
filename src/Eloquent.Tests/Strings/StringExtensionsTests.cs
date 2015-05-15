@@ -192,6 +192,15 @@ namespace Eloquent.Tests.Strings
                 DateTime dt = DateTime.Now;
                 Assert.AreEqual(dt.ToString(), dt.ToString().ParseDateTime().ToString());
             }
+
+            [TestMethod]
+            public void Can_ParseDateTime()
+            {
+                string st = "01/01/2015 12:10:10.200";
+                var dt = st.ParseDateTime();
+
+            }
         }
+
     }
 }
