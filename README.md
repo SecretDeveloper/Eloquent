@@ -41,12 +41,13 @@ Int64 myInt64 = "10".ToInt64();
 
 DateTime myDateTime = "23-Apr-2014 10:56:10.30".ParseDateTime();
 DateTime myDateTime = "23-Apr-2014".ParseDateTime();
-if("23-Apr-2014".TryParseDateTime(out myDateTime)){...}
+if("23-Apr-2014".TryParseDateTime(out myDateTime)){
+// success ...}
 
-var myString = "{0]{1} -- {2}".Format("Tom", "Dick", "Harry");
+var myString = "{0], {1} and {2}".Format("Tom", "Dick", "Harry");
 
-MatchCollection matches = "This is item costs $12".RegexMatches("\d*");
-string myValue = "This is item costs $12".RegexReplace("[^\d]");
+MatchCollection matches = "This item costs $12".RegexMatches("\d*");
+string myValue = "This item costs $12".RegexReplace("[^\d]");
 string myLiteral = "STRING WITH TABS    AND Newlines
 ".ToLiteral();  
 
@@ -55,7 +56,7 @@ string myLiteral = "STRING WITH TABS    AND Newlines
 ### Number Expression
 ```c#
  // Some Megabyte math.
- 1.Exabytes() + 1.Petabytes() + 1.Terabytes() + 1.Gigabytes() + 1.Megabytes() + 1.Kilobytes() + 1.Bytes();
+ 2.Exabytes() + 2.Petabytes() + 2.Terabytes() + 2.Gigabytes() + 2.Megabytes() + 2.Kilobytes() + 2.Bytes();
  
 ```
 
