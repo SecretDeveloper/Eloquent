@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>$id$</id>
+    <id>Eloquent</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <description>$description$</description>        
-    <copyright>$copyright$</copyright>
-    <authors>$author$</authors>
-    <owners>$author$</owners>    
+    <title>Eloquent</title>
+    <description>Eloquent is a small collection of fluent (or fluent-like) expressions for .NET</description>        
+    <copyright>Copyright 2015</copyright>
+    <authors>Gary Kenneally (@SecretDeveloper)</authors>
+    <owners>Gary Kenneally (@SecretDeveloper)</owners>    
     <licenseUrl>https://raw.githubusercontent.com/SecretDeveloper/Eloquent/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/SecretDeveloper/Eloquent</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/SecretDeveloper/Eloquent/master/icon.png</iconUrl>
@@ -15,7 +15,7 @@
     <tags>Fluent Fluent-Like .NET C#</tags>    
   </metadata>
   <files>
-      <file src="C:\Development\projects\github.com\secretdeveloper\Eloquent\src\BuildOutput\Eloquent.dll" target="lib\net45\Eloquent.dll" />      
-      <file src="C:\Development\projects\github.com\secretdeveloper\Eloquent\src\BuildOutput\README.txt" target="" />
+      <file src="C:\Development\projects\github.com\secretdeveloper\Eloquent\BuildOutput\Eloquent.dll" target="lib\net45\Eloquent.dll" />      
+      <file src="C:\Development\projects\github.com\secretdeveloper\Eloquent\README.txt" target="" />
   </files>
 </package>

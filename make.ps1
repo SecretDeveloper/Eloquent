@@ -217,7 +217,7 @@ $fullBuildVersion = "$buildVersion.0"
 $projectName = "Eloquent"
 $buildType="Release"
 
-if($buildType -eq "clean"){  
+if($commandArg -eq "clean"){  
     clean  
     exit
 }
@@ -226,7 +226,7 @@ if($buildType -eq "clean"){
     build
     vstest    
     
-if($buildType -eq "publish"){
+if($commandArg -eq "publish"){
     pack 
     publish 
 }
