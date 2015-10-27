@@ -1,9 +1,12 @@
 ﻿using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml.Schema;
 
 namespace Eloquent
 {
@@ -153,6 +156,41 @@ namespace Eloquent
         public static bool IsNullOrWhiteSpace(this string value)
         {
             return string.IsNullOrWhiteSpace(value);
+        }
+
+        /// <summary>
+        /// Returns a measure of the information content of a string.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static double Entropy(this string value)
+        {
+            var dict = CountDistinctCharacters(value);
+
+            double infoCount=0d;
+            double logTwo = Math.Log(2);
+
+            foreach (var kv in dict)
+            {
+                double freq = kv.Value/value.Length;
+                infoCount += freq*Math.Log(freq)/logTwo;
+            }
+            infoCount *= -1;
+            return infoCount;
+        }
+
+        private static Dictionary<char, double> CountDistinctCharacters(string value)
+        {
+            var dict = new Dictionary<char, double>();
+
+            foreach (var c in value)
+            {
+                if (!dict.ContainsKey(c))
+                    dict[c] = 1;
+                else
+                    dict[c] = dict[c] + 1;
+            }
+            return dict;
         }
 
         #endregion

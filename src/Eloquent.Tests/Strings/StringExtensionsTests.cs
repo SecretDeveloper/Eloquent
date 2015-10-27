@@ -30,6 +30,20 @@ namespace Eloquent.Tests.Strings
             }
         }
 
+        [TestClass]
+        public class Entropy
+        {
+            [TestMethod]
+            public void Can_Determine_Entropy()
+            {
+                Assert.AreEqual(0, "".Entropy());
+                Assert.AreEqual(0, "a".Entropy());
+                Assert.AreEqual(1.5849625007211561, "abc".Entropy());
+                Assert.AreEqual(3.0957952550009344, "Mathematics".Entropy());
+                Assert.AreEqual(0.228538143953528006, "aaaaaaaaaaaaaaaaaaaaaaaaaaB".Entropy());
+                Assert.AreEqual(3, "Eloquent".Entropy());
+            }
+        }
 
         [TestClass]
         public class ToBoolean
