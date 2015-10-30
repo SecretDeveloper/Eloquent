@@ -1,5 +1,8 @@
 # Eloquent
 
+[<img src="https://img.shields.io/appveyor/ci/secretdeveloper/Eloquent/master.svg">](https://ci.appveyor.com/project/SecretDeveloper/Eloquent)
+[<img src="https://img.shields.io/nuget/dt/Eloquent.svg">](https://www.nuget.org/packages/Eloquent/)
+
 Eloquent is a small collection of fluent (or fluent-like) expressions for C#.  The examples below are some but not all of the methods it provides.
 
 ### TimeSpan expressions
