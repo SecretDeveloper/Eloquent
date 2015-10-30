@@ -49,7 +49,7 @@ namespace Eloquent.Tests.Strings
         public class ToBoolean
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Boolean()
             {
                 Assert.IsTrue("true".ToBoolean());
                 Assert.IsFalse("false".ToBoolean());
@@ -60,7 +60,7 @@ namespace Eloquent.Tests.Strings
         public class ToByte
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Byte()
             {
                 Assert.AreEqual(1, "1".ToByte());
             }
@@ -70,7 +70,7 @@ namespace Eloquent.Tests.Strings
         public class ToDateTime
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_DateTime_Extended()
             {
                 DateTime dt = DateTime.Now;
                 DateTime dt2 = dt.ToString().ToDateTime();
@@ -79,7 +79,7 @@ namespace Eloquent.Tests.Strings
             }
 
             [TestMethod]
-            public void Can_Convert_String()
+            public void Can_Convert_String_To_DateTime()
             {
                 DateTime dt = new DateTime(2014, 04, 23, 10, 56, 10, 30);
                 
@@ -91,7 +91,7 @@ namespace Eloquent.Tests.Strings
         public class ToDecimal
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Decimal()
             {
                 Assert.AreEqual(1M, "1".ToDecimal());
                 Assert.AreEqual(-1.12333M, "-1.12333".ToDecimal());
@@ -102,7 +102,7 @@ namespace Eloquent.Tests.Strings
         public class ToDouble
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Double()
             {
                 Assert.AreEqual(1D, "1".ToDouble());
                 Assert.AreEqual(-1.12333D, "-1.12333".ToDouble());
@@ -113,7 +113,7 @@ namespace Eloquent.Tests.Strings
         public class ToInt16
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Int16()
             {
                 Assert.AreEqual(1, "1".ToInt16());
                 Assert.AreEqual(-1, "-1".ToInt16());
@@ -124,7 +124,7 @@ namespace Eloquent.Tests.Strings
         public class ToInt32
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Int32()
             {
                 Assert.AreEqual(1, "1".ToInt32());
                 Assert.AreEqual(-1, "-1".ToInt32());
@@ -135,7 +135,7 @@ namespace Eloquent.Tests.Strings
         public class ToInt64
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Int64()
             {
                 Assert.AreEqual(1, "1".ToInt64());
                 Assert.AreEqual(-1, "-1".ToInt64());
@@ -146,7 +146,7 @@ namespace Eloquent.Tests.Strings
         public class ToSByte
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_SByte()
             {
                 Assert.AreEqual(1, "1".ToSByte());
                 Assert.AreEqual(-1, "-1".ToSByte());
@@ -157,7 +157,7 @@ namespace Eloquent.Tests.Strings
         public class ToSingle
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_Single()
             {
                 Assert.AreEqual(1, "1".ToSingle());
                 Assert.AreEqual(-1, "-1".ToSingle());
@@ -168,7 +168,7 @@ namespace Eloquent.Tests.Strings
         public class ToUInt16
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_UInt16()
             {
                 Assert.AreEqual(1, "1".ToUInt16());
                 Assert.AreEqual(UInt16.MaxValue, UInt16.MaxValue.ToString().ToUInt16());
@@ -179,7 +179,7 @@ namespace Eloquent.Tests.Strings
         public class ToUInt32
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_UInt32()
             {
                 Assert.AreEqual(Convert.ToUInt32(1), "1".ToUInt32());
                 Assert.AreEqual(UInt32.MaxValue, UInt32.MaxValue.ToString().ToUInt32());
@@ -190,7 +190,7 @@ namespace Eloquent.Tests.Strings
         public class ToUInt64
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Convert_String_To_UInt64()
             {
                 Assert.AreEqual(Convert.ToUInt64(1), "1".ToUInt64());
                 Assert.AreEqual(UInt64.MaxValue, UInt64.MaxValue.ToString().ToUInt64());
@@ -201,14 +201,14 @@ namespace Eloquent.Tests.Strings
         public class ParseDateTime
         {
             [TestMethod]
-            public void Can_Convert()
+            public void Can_Parse_DateTime_Extended()
             {
                 DateTime dt = DateTime.Now;
                 Assert.AreEqual(dt.ToString(), dt.ToString().ParseDateTime().ToString());
             }
 
             [TestMethod]
-            public void Can_ParseDateTime()
+            public void Can_Parse_DateTime()
             {
                 string st = "01/01/2015 12:10:10.200";
                 var dt = st.ParseDateTime();
